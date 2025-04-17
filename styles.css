@@ -553,6 +553,11 @@ li > a {
     margin-top: 6rem;
   }
 
+  #image-1 {
+    min-height: 448px;
+    width: 445px;
+  }
+
   .main-page-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
