@@ -505,7 +505,8 @@ li > a {
 @media screen and (min-width: 1025px) {
   .main-container {
     max-width: 1110px;
-    margin: 3rem auto;
+    margin-inline: auto;
+    margin-top: 0;
   }
 
   #hamburger-menu {
