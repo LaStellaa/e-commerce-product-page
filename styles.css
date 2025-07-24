@@ -27,15 +27,6 @@
   --text-preset-6-line-height: 1.25;
 }
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
-  margin-top: 2rem;
-}
-.attribution a {
-  color: hsl(228, 45%, 44%);
-}
-
 *,
 *::before,
 *::after {
