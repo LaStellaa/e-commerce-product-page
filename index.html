@@ -14,63 +14,110 @@
     <title>E-commerce product page</title>
   </head>
   <body>
-    <main>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <main id="main-content">
       <div class="main-container">
         <header>
-          <nav>
+          <nav role="navigation" aria-label="Main navigation">
             <div class="logo-menu">
-              <img
+              <button
                 id="hamburger-menu"
-                src="./images/icon-menu.svg"
-                alt="hamburger menu icon"
-              />
-              <img src="./images/logo.svg" alt="logo" />
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="menu-links"
+              >
+                <img src="./images/icon-menu.svg" alt="" aria-hidden="true" />
+              </button>
+              <img src="./images/logo.svg" alt="Sneaker Company Logo" />
             </div>
-            <div class="menu">
-              <img
+            <div
+              class="menu"
+              role="dialog"
+              aria-labelledby="menu-heading"
+              aria-hidden="true"
+            >
+              <h2 id="menu-heading" class="sr-only">Navigation Menu</h2>
+              <button
                 id="closing-icon"
-                src="./images/icon-close.svg"
-                alt="closing x icon"
-              />
-              <ul id="menu-links">
-                <li>
-                  <a href="#">Collections</a>
+                class="menu-close"
+                type="button"
+                aria-label="Close navigation menu"
+              >
+                <img src="./images/icon-close.svg" alt="" aria-hidden="true" />
+              </button>
+              <ul id="menu-links" role="list">
+                <li role="listitem">
+                  <a href="#" role="menuitem">Collections</a>
                 </li>
-                <li>
-                  <a href="#">Men</a>
+                <li role="listitem">
+                  <a href="#" role="menuitem">Men</a>
                 </li>
-                <li>
-                  <a href="#">Women</a>
+                <li role="listitem">
+                  <a href="#" role="menuitem">Women</a>
                 </li>
-                <li>
-                  <a href="#">About</a>
+                <li role="listitem">
+                  <a href="#" role="menuitem">About</a>
                 </li>
-                <li>
-                  <a href="#">Contact</a>
+                <li role="listitem">
+                  <a href="#" role="menuitem">Contact</a>
                 </li>
               </ul>
             </div>
 
             <div class="cart-avatar-container">
               <div class="cart-icon">
-                <img
-                  src="./images/icon-cart.svg"
-                  alt="icon of a cart"
+                <button
                   id="cart-icon"
-                />
-                <h6 class="cart-count">3</h6>
+                  type="button"
+                  class="cart-button"
+                  aria-label="View shopping cart"
+                  aria-expanded="false"
+                  aria-describedby="cart-count"
+                >
+                  <img src="./images/icon-cart.svg" alt="" aria-hidden="true" />
+                  <span
+                    id="cart-count"
+                    class="cart-count"
+                    aria-label="3 items in cart"
+                    >3</span
+                  >
+                </button>
               </div>
 
-              <img id="avatar" src="./images/image-avatar.png" alt="avatar" />
-              <div class="basket-card">
-                <h3>Cart</h3>
+              <button
+                id="avatar"
+                class="avatar-button"
+                type="button"
+                aria-label="User account"
+              >
+                <img
+                  src="./images/image-avatar.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </button>
+
+              <div
+                class="basket-card"
+                role="dialog"
+                aria-labelledby="cart-heading"
+                aria-hidden="true"
+              >
+                <h3 id="cart-heading">Cart</h3>
                 <hr />
-                <div class="basket-empty">
+                <div class="basket-empty" aria-live="polite">
                   <h4>Your cart is empty</h4>
                 </div>
-                <div class="basket-full">
+                <div class="basket-full" aria-live="polite">
                   <div class="basket-products">
-                    <img src="./images/image-product-1-thumbnail.jpg" alt="" />
+                    <img
+                      src="./images/image-product-1-thumbnail.jpg"
+                      alt="Fall Limited Edition Sneakers thumbnail"
+                    />
                     <div class="basket-products-info">
                       <p>Fall Limited Edition Sneakers</p>
                       <p>
@@ -78,180 +125,330 @@
                         <span id="total-price">$375.00</span>
                       </p>
                     </div>
-                    <img
+                    <button
                       id="bin-icon"
-                      src="./images/icon-delete.svg"
-                      alt="little bin icon"
-                    />
+                      type="button"
+                      class="delete-button"
+                      aria-label="Remove Fall Limited Edition Sneakers from cart"
+                    >
+                      <img
+                        src="./images/icon-delete.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                    </button>
                   </div>
-                  <button id="checkout">Checkout</button>
+                  <button id="checkout" type="button">Checkout</button>
                 </div>
               </div>
             </div>
           </nav>
         </header>
 
-        <div class="overlay hidden" id="mobile-overlay"></div>
+        <div
+          class="overlay hidden"
+          id="mobile-overlay"
+          aria-hidden="true"
+        ></div>
 
         <div class="main-page-section">
-          <section class="product-images">
+          <section class="product-images" aria-label="Product images">
             <div class="carousel-wrapper">
-              <div class="carousel">
+              <div
+                class="carousel"
+                role="img"
+                aria-label="Product image carousel"
+              >
                 <img
                   class="product-image active"
                   id="image-1"
                   src="./images/image-product-1.jpg"
-                  alt="shoes image 1"
+                  alt="Fall Limited Edition Sneakers - Front view showing white and orange design"
                 />
                 <img
                   class="product-image"
                   id="image-2"
                   src="./images/image-product-2.jpg"
-                  alt="shoes image 2"
+                  alt="Fall Limited Edition Sneakers - Side view showing sole detail"
                 />
                 <img
                   class="product-image"
                   id="image-3"
                   src="./images/image-product-3.jpg"
-                  alt="shoes image 3"
+                  alt="Fall Limited Edition Sneakers - Back view showing heel design"
                 />
                 <img
                   class="product-image"
                   id="image-4"
                   src="./images/image-product-4.jpg"
-                  alt="shoes image 4"
+                  alt="Fall Limited Edition Sneakers - Top view showing laces and tongue"
                 />
               </div>
-              <!-- Arrows for navigation -->
-              <div class="arrows">
-                <img
+              <!-- Navigation arrows for mobile carousel -->
+              <div class="arrows" role="group" aria-label="Image navigation">
+                <button
                   id="previous"
-                  src="./images/icon-previous.svg"
-                  alt="previous arrow"
-                />
-
-                <img id="next" src="./images/icon-next.svg" alt="next arrow" />
-              </div>
-            </div>
-
-            <!-- Thumbnails -->
-            <div class="thumbnails">
-              <img
-                class="thumbnail active"
-                src="./images/image-product-1-thumbnail.jpg"
-                alt="thumbnail image 1"
-              />
-              <img
-                class="thumbnail"
-                src="./images/image-product-2-thumbnail.jpg"
-                alt="thumbnail image 2"
-              />
-              <img
-                class="thumbnail"
-                src="./images/image-product-3-thumbnail.jpg"
-                alt="thumbnail image 3"
-              />
-              <img
-                class="thumbnail"
-                src="./images/image-product-4-thumbnail.jpg"
-                alt="thumbnail image 4"
-              />
-            </div>
-
-            <!-- Modal container -->
-            <div class="modal hidden" id="desktop-modal">
-              <!-- Main image -->
-              <div class="modal-main-image">
-                <div class="close-button">x</div>
-                <img
-                  src="./images/image-product-1.jpg"
-                  alt="shoe image"
-                  class="modal-current-image"
-                />
-                <div class="modal-arrows">
+                  type="button"
+                  class="carousel-button"
+                  aria-label="Previous image"
+                >
                   <img
                     src="./images/icon-previous.svg"
-                    alt="arrow previous"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
+
+                <button
+                  id="next"
+                  type="button"
+                  class="carousel-button"
+                  aria-label="Next image"
+                >
+                  <img src="./images/icon-next.svg" alt="" aria-hidden="true" />
+                </button>
+              </div>
+            </div>
+
+            <!-- Thumbnails for desktop -->
+            <div
+              class="thumbnails"
+              role="tablist"
+              aria-label="Product image thumbnails"
+            >
+              <button
+                class="thumbnail active"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-label="View image 1: Front view"
+                tabindex="0"
+              >
+                <img
+                  src="./images/image-product-1-thumbnail.jpg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </button>
+              <button
+                class="thumbnail"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-label="View image 2: Side view"
+                tabindex="-1"
+              >
+                <img
+                  src="./images/image-product-2-thumbnail.jpg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </button>
+              <button
+                class="thumbnail"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-label="View image 3: Back view"
+                tabindex="-1"
+              >
+                <img
+                  src="./images/image-product-3-thumbnail.jpg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </button>
+              <button
+                class="thumbnail"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-label="View image 4: Top view"
+                tabindex="-1"
+              >
+                <img
+                  src="./images/image-product-4-thumbnail.jpg"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </button>
+            </div>
+
+            <!-- Modal for desktop lightbox -->
+            <div
+              class="modal hidden"
+              id="desktop-modal"
+              role="dialog"
+              aria-labelledby="modal-heading"
+              aria-modal="true"
+              aria-hidden="true"
+            >
+              <h2 id="modal-heading" class="sr-only">Product Image Lightbox</h2>
+              <!-- Main image in modal -->
+              <div class="modal-main-image">
+                <button
+                  class="close-button"
+                  type="button"
+                  aria-label="Close lightbox"
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
+                <img
+                  src="./images/image-product-1.jpg"
+                  alt="Fall Limited Edition Sneakers - Front view showing white and orange design"
+                  class="modal-current-image"
+                />
+                <div
+                  class="modal-arrows"
+                  role="group"
+                  aria-label="Modal image navigation"
+                >
+                  <button
                     class="modal-previous"
-                  />
-                  <img
-                    src="./images/icon-next.svg"
-                    alt="arrow next"
+                    type="button"
+                    aria-label="Previous image"
+                  >
+                    <img
+                      src="./images/icon-previous.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  </button>
+                  <button
                     class="modal-next"
-                  />
+                    type="button"
+                    aria-label="Next image"
+                  >
+                    <img
+                      src="./images/icon-next.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  </button>
                 </div>
               </div>
 
               <!-- Modal thumbnails -->
-              <div class="modal-thumbnails">
-                <img
-                  src="./images/image-product-1-thumbnail.jpg"
-                  alt="small image"
+              <div
+                class="modal-thumbnails"
+                role="tablist"
+                aria-label="Modal image thumbnails"
+              >
+                <button
                   class="thumb active"
+                  type="button"
+                  role="tab"
+                  aria-selected="true"
+                  aria-label="View image 1: Front view"
                   data-index="0"
-                />
-                <img
-                  src="./images/image-product-2-thumbnail.jpg"
-                  alt="small image"
+                  tabindex="0"
+                >
+                  <img
+                    src="./images/image-product-1-thumbnail.jpg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
+                <button
                   class="thumb"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  aria-label="View image 2: Side view"
                   data-index="1"
-                />
-                <img
-                  src="./images/image-product-3-thumbnail.jpg"
-                  alt="small image"
+                  tabindex="-1"
+                >
+                  <img
+                    src="./images/image-product-2-thumbnail.jpg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
+                <button
                   class="thumb"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  aria-label="View image 3: Back view"
                   data-index="2"
-                />
-                <img
-                  src="./images/image-product-4-thumbnail.jpg"
-                  alt="small image"
+                  tabindex="-1"
+                >
+                  <img
+                    src="./images/image-product-3-thumbnail.jpg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
+                <button
                   class="thumb"
+                  type="button"
+                  role="tab"
+                  aria-selected="false"
+                  aria-label="View image 4: Top view"
                   data-index="3"
-                />
+                  tabindex="-1"
+                >
+                  <img
+                    src="./images/image-product-4-thumbnail.jpg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
               </div>
             </div>
           </section>
-          <section class="product-description">
+
+          <section class="product-description" aria-label="Product details">
             <div class="text-container">
-              <h3>Sneaker Company</h3>
+              <h2>Sneaker Company</h2>
               <h1>Fall Limited Edition Sneakers</h1>
               <p>
                 These low-profile sneakers are your perfect casual wear
-                companion. Featuring a durable rubber outer sole, they’ll
+                companion. Featuring a durable rubber outer sole, they'll
                 withstand everything the weather can offer.
               </p>
             </div>
-            <div class="price">
+            <div class="price" aria-label="Pricing information">
               <div class="current-price">
-                <h2>$125.00</h2>
-                <span id="discount">50%</span>
+                <h3>$125.00</h3>
+                <span id="discount" aria-label="50% discount">50%</span>
               </div>
               <div class="old-price">
-                <h3 id="old-price">$250.00</h3>
+                <h4 id="old-price" aria-label="Original price">$250.00</h4>
               </div>
             </div>
             <div class="button-section">
-              <button id="quantity-button">
-                <img
-                  src="./images/icon-minus.svg"
-                  alt="minus icon"
+              <div
+                id="quantity-button"
+                role="group"
+                aria-label="Quantity selector"
+              >
+                <button
                   id="decrease"
-                />
-                <span id="quantity">0</span>
-                <img
-                  src="./images/icon-plus.svg"
-                  alt="plus icon"
+                  type="button"
+                  aria-label="Decrease quantity"
+                >
+                  <img
+                    src="./images/icon-minus.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
+                <span id="quantity" aria-live="polite" aria-label="Quantity: 0"
+                  >0</span
+                >
+                <button
                   id="increase"
-                />
-              </button>
+                  type="button"
+                  aria-label="Increase quantity"
+                >
+                  <img src="./images/icon-plus.svg" alt="" aria-hidden="true" />
+                </button>
+              </div>
 
-              <button id="add-to-cart-button">
-                <img
-                  src="./images/icon-cart.svg"
-                  alt="icon cart"
-                  id="cart-icon"
-                />
-                <span id="add-to-cart"></span>Add to cart
+              <button id="add-to-cart-button" type="button">
+                <img src="./images/icon-cart.svg" alt="" aria-hidden="true" />
+                <span>Add to cart</span>
               </button>
             </div>
           </section>
